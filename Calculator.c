@@ -1,12 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
 
 int main()
  {
 //variables
     int Number1,Number2,total,multiplication,division,extraction;
-	
+	char process;
 //get data from user
 
     printf("Number1: ");
@@ -14,6 +13,12 @@ int main()
 
 	printf("Number2: ");
 	scanf("%d",&Number2);
+    
+    printf("Total: T\nExtraction: E\nMultiplication: M\nDivide: D\n");
+    
+    printf("islem seciniz: ");
+    scanf(" %c", &process);
+
 //calculations
     total=Number1+Number2;
     extraction=Number1-Number2;
@@ -21,11 +26,22 @@ int main()
     division=Number1/Number2;
 //Printing calculations made with data received from users to the screen
     printf("********************Results********************\n");
-    printf("Total:  %d \n",total);
-    printf("Extraction:  %d \n",extraction);
-    printf("Multiplication:  %d \n",multiplication);
-    printf("Divide:  %d \n",division);
+    switch(process){
+    case 'T':
+        printf("Total:  %d \n",total);
+        break;
+    case 'E':
+        printf("Extraction:  %d \n",extraction);
+        break;
+    case 'M':
+        printf("Multiplication:  %d \n",multiplication);
+        break;
+    case 'D':
+        printf("Divide:  %d \n",division);
+        break;
+    }
+
     printf("***********************************************");
-    getch();    
+    
     return 0;
 }
